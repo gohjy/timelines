@@ -1,0 +1,76 @@
+@import url("https://cdn.jsdelivr.net/gh/gohjy/base-css@e1f883f2e987d34ffe13c4f325fbb677899a6a94/css/main.min.css");
+
+@font-face {
+    font-family: "JetBrains Mono";
+    src: url("https://cdn.jsdelivr.net/gh/google/fonts@2e05c1cf00a6e4f40a4b931600a90881c26e15cd/ofl/jetbrainsmono/JetBrainsMono%5Bwght%5D.ttf") format("opentype");
+}
+@font-face {
+    font-family: "JetBrains Mono";
+    font-style: italic;
+    src: url("https://cdn.jsdelivr.net/gh/google/fonts@2e05c1cf00a6e4f40a4b931600a90881c26e15cd/ofl/jetbrainsmono/JetBrainsMono-Italic%5Bwght%5D.ttf") format("opentype");
+}
+
+:root {
+    --custom-font: "JetBrains Mono";
+    --body-font: var(--custom-font), var(--monospace-font);
+
+    color-scheme: dark;
+}
+
+#app {
+    max-width: 30em;
+    margin: 0 auto;
+}
+
+#timeline {
+    border-left: 1px dashed;
+}
+
+#timeline > :not(.date) {
+    margin-left: 40px;
+}
+
+.date {
+    margin-left: 20px;
+    font-size: .85em;
+}
+
+.date, .item {
+    padding-top: .5rem;
+}
+
+.date, .time {
+    color: #888888;
+    text-transform: uppercase;
+}
+
+.time {
+    font-size: .75em;
+}
+
+.item-desc {
+    color: #888888;
+    font-size: .95em;
+}
+
+.item {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    padding-bottom: .5rem;
+}
+
+/* The line that links the time to the timeline */
+.item::before {
+    content: "";
+    display: block;
+    width: 30px;
+    position: absolute;
+    left: -40px;
+    top: calc(.5lh * .75 + .5rem);
+    border-top: 1px dashed;
+}
+
+.grey, .grey * {
+    color: #888888;
+}
