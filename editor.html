@@ -12,8 +12,24 @@
 <body>
     <div id="app">
         <h1>Timeline Editor</h1>
-        <form>
-            
+        <form id="main-form">
+            <div>
+                Timeline title:
+                <input type="text" class="full-width" id="timeline-title-input" required>
+                <br><br>
+                Timeline description (optional):
+                <textarea rows="4" id="timeline-desc-input"></textarea>
+            </div>
+            <br>
+            <div>
+                Timeline items:
+                <div class="item-input-holder">
+                </div>
+                <div class="break"></div>
+                <input type="button" id="add-new-item-btn" value="Add another item" class="full-width">
+            </div>
+            <div class="break"></div>
+            <input type="submit" value="Generate link" class="full-width" style="cursor: pointer;">
         </form>
     </div>
 
