@@ -36,6 +36,7 @@ function main() {
     }).sort((a, b) => a.timestamp - b.timestamp);
 
     document.title = document.querySelector("#timeline-title").textContent = data.title.trim();
+    if (data.description.trim()) document.querySelector("#timeline-description").innerText = data.description.trim();
 
     const container = document.querySelector("#timeline");
     let prevDate = "";
@@ -83,7 +84,7 @@ function main() {
         if (item.description) {
             const desc = document.createElement("div");
             desc.classList.add("item-desc");
-            desc.textContent = item.description.trim();
+            desc.innerText = item.description.trim();
             itemBox.append(desc);
             replaceInnerHTML(desc);
         }
