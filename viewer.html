@@ -8,6 +8,16 @@
     <title>Loading page...</title>
 
     <link href="./style.css" rel="stylesheet">
+
+    <style>
+        html.embed, html.embed body {
+            scrollbar-gutter: unset;
+            scrollbar-color: unset;
+        }
+        html.embed .timeline-actions-bar {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -15,7 +25,7 @@
         <p id="timeline-description"></p>
         <div id="timeline">
         </div>
-        <p class="grey small">
+        <p class="grey small timeline-actions-bar">
             <a href="./editor.html" target="_self">Create your own timeline</a>
             /
             <a href="./editor.html" target="_self" id="edit-timeline-link">Edit a copy of this timeline</a>

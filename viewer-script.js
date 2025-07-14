@@ -11,6 +11,9 @@ function replaceInnerHTML(...elemList) {
 }
 
 function main() {
+    const IS_EMBED = new URL(location.href).searchParams.has("embed");
+    if (IS_EMBED) document.documentElement.classList.add("embed");
+
     let data;
     try {
         data = JSON.parse(new URL(location.href).searchParams.get("data"));
@@ -92,6 +95,7 @@ function main() {
         container.append(itemBox);
     }
 
+    if (IS_EMBED) document.querySelector(".timeline-actions-bar")?.remove();
 }
 
 main();
