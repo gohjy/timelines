@@ -39,7 +39,7 @@ function main() {
     }).sort((a, b) => a.timestamp - b.timestamp);
 
     document.title = document.querySelector("#timeline-title").textContent = data.title.trim();
-    if (data.description.trim()) document.querySelector("#timeline-description").innerText = data.description.trim();
+    if (data.description?.trim()) document.querySelector("#timeline-description").innerText = data.description.trim();
 
     const container = document.querySelector("#timeline");
     let prevDate = "";
