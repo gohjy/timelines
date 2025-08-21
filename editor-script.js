@@ -43,7 +43,8 @@ if (!new URL(location.href).searchParams.has("data")) addBtn.click();
 const titleInput = document.querySelector("#timeline-title-input");
 const descInput = document.querySelector("#timeline-desc-input");
 
-function handleSubmit() {
+function handleSubmit(ev) {
+    ev.preventDefault();
     const timelineData = {};
     timelineData.title = titleInput.value.trim();
     timelineData.description = descInput.value.trim() || undefined;
